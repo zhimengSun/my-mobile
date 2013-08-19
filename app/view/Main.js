@@ -9,8 +9,11 @@ Ext.define('my-mobile.view.Main', {
         tabBarPosition: 'bottom',
 
         items: [
+            { 
+                xtype: 'note_page'
+	    },
             {
-                title: 'Welcome',
+                title: '首页',
                 iconCls: 'home',
 
                 styleHtmlContent: true,
@@ -19,7 +22,7 @@ Ext.define('my-mobile.view.Main', {
                 items: {
                     docked: 'top',
                     xtype: 'titlebar',
-                    title: 'Welcome to Sencha Touch 2'
+                    title: '个人内部管理系统'
                 },
 
                 html: [
@@ -28,14 +31,17 @@ Ext.define('my-mobile.view.Main', {
                 ].join("")
             },
             {
-                title: 'Get Started',
+                xtype: 'events_panel'
+            },
+            {
+                title: '统计分析',
                 iconCls: 'action',
 
                 items: [
                     {
                         docked: 'top',
                         xtype: 'titlebar',
-                        title: 'Getting Started'
+                        title: '统计分析'
                     },
                     {
                         xtype: 'video',

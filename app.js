@@ -19,15 +19,26 @@ Ext.Loader.setPath({
 });
 //</debug>
 
+window.ApiServer = "http://192.168.1.102:3001";
+window.Token = "TOKEN";
+window.TokenStr = "?token=TOKEN";
+
 Ext.application({
     name: 'my-mobile',
 
     requires: [
         'Ext.MessageBox'
     ],
+    
+    controllers: [
+        'Main','Notes'
+    ],
 
+    models: [
+        'Note'
+    ],
     views: [
-        'Main'
+        'Main','Event','NotesListContainer','NoteEditor',"NotesList"
     ],
 
     icon: {
@@ -53,7 +64,16 @@ Ext.application({
         Ext.fly('appLoadingIndicator').destroy();
 
         // Initialize the main view
-        Ext.Viewport.add(Ext.create('my-mobile.view.Main'));
+        var notesListContainer = {
+            xtype: "noteslistcontainer"
+        };
+        var noteEditor = {
+            xtype: "noteeditor"
+        };
+ 
+        Ext.Viewport.add([notesListContainer,noteEditor]);
+
+        // Ext.Viewport.add(Ext.create('my-mobile.view.Main'));
     },
 
     onUpdated: function() {
