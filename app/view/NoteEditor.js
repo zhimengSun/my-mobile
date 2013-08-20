@@ -12,7 +12,9 @@
         var backButton = {
             xtype: "button",
             ui: "back",
-            text: "Home"
+            text: "Home",
+            handler: this.onBackButtonTap,
+            scope: this
         };
 
         var saveButton = {
@@ -73,7 +75,11 @@
     onSaveButtonTap: function () {
         console.log("saveNoteCommand");
         this.fireEvent("saveNoteCommand", this);
+    },
+    onBackButtonTap: function () {
+        console.log("backNoteCommand");
+        this.fireEvent("backNoteCommand", this);
     }
-
+    
 });
 

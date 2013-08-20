@@ -41,6 +41,9 @@ Ext.application({
         'Main','Event','NotesListContainer','NoteEditor',"NotesList"
     ],
 
+    stores: [
+        'Notes'
+    ],
     icon: {
         '57': 'resources/icons/Icon.png',
         '72': 'resources/icons/Icon~ipad.png',

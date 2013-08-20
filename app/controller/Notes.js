@@ -15,7 +15,8 @@
             },
             noteEditor: {
                 // The commands fired by the note editor.
-                saveNoteCommand: "onSaveNoteCommand"
+                saveNoteCommand: "onSaveNoteCommand",
+                backNoteCommand: "onBackNoteCommand"
             }
 
         }
@@ -95,6 +96,10 @@
         this.activateNotesList();
     },  
 
+    onBackNoteCommand: function () {
+        this.activateNotesList();
+        // this.callParent(arguments);
+    },
     // Base Class functions.
     launch: function () {
         this.callParent(arguments);
